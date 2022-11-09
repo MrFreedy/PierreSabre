@@ -17,7 +17,7 @@ public class Humain {
 
 
 	public void parler(String texte) {
-		System.out.printf(texte);
+		System.out.printf("("+getNom()+")"+" - "+texte);
 	}
 	
 	public String getNom() {
@@ -33,7 +33,7 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		System.out.printf("Bonjour ! Je m’appelle %s et j'aime boire du %s !\n", getNom(), getBoisson());
+		System.out.printf("("+getNom()+") - "+"Bonjour ! Je m’appelle %s et j'aime boire du %s !\n", getNom(), getBoisson());
 	}
 	
 	public void boire() {
