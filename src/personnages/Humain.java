@@ -44,8 +44,9 @@ public class Humain {
 		money += gain;
 	}
 	
-	public void perdreArgent(int perte) {
+	public int perdreArgent(int perte) {
 		money -= perte;
+		return money;
 	}
 	
 	public void acheter(String bien, int prix){

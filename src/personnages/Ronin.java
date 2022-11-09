@@ -18,4 +18,20 @@ public class Ronin extends Humain{
 
     }
 
+    public void provoquer(Yakuza adversaire){
+        System.out.println("("+getNom()+") - "+"Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand!");
+        if(2*honneur>=adversaire.getReputation()){
+            System.out.printf("("+getNom()+") - "+"Je t'ai eu petit yakuza!\n");
+            int argent=adversaire.getMoney();
+            gagnerArgent(argent);
+            honneur++;
+            adversaire.perdre();
+        }
+        else{
+            System.out.printf("("+getNom()+") - "+"J'ai perdu contre ce yakuza, mon honneur et ma bourse ont en pris un coup.\n");
+            adversaire.gagner(getMoney());
+            honneur--;
+            perdreArgent(getMoney());
+        }
+    }
 }
