@@ -1,0 +1,46 @@
+@startuml
+
+title __PERSONNAGES's Class Diagram__\n
+
+  namespace personnages {
+    class personnages.Humain {
+        + getNom()
+        + direBonjour()
+        + boire()
+        + memoriser()
+    }
+  }
+  
+
+  namespace personnages {
+    class personnages.Ronin {
+        + provoquer()
+    }
+  }
+  
+
+  namespace personnages {
+    class personnages.Samourai {
+        + boire()
+        + direBonjour()
+    }
+  }
+  
+
+  namespace personnages {
+    class personnages.Traitre {
+        + direBonjour()
+        + faireLeGentil()
+        + ranconner()
+    }
+  }
+
+  personnages.Ronin -up-|> personnages.Humain
+  personnages.Samourai -up-|> personnages.Humain
+  personnages.Traitre -up-|> personnages.Humain
+
+right footer
+
+endfooter
+
+@enduml

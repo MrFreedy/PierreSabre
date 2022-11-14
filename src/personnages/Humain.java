@@ -3,7 +3,7 @@ package personnages;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Humain {
+public abstract class Humain {
 	private String nom;
 	private String boissonFavorite;
 	private int money;
@@ -103,5 +103,5 @@ public class Humain {
 		memoriser(humain);
 
 	}
-	
+
 }

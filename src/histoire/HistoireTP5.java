@@ -17,23 +17,17 @@ public class HistoireTP5 {
         Samourai akimoto = new Samourai("Akimoto","saké",80,"Miyamoto");
 
         Traitre masako = new Traitre("Masako","whisky",80,"Miyamoto");
+        GrandMere grandMere = new GrandMere("GrandMère",10);
 
-        masako.faireLeGentil();
+        grandMere.faireConnaissanceAvec(marco);
+        grandMere.faireConnaissanceAvec(chonin);
+        grandMere.faireConnaissanceAvec(kumi);
+        grandMere.faireConnaissanceAvec(yaku);
+        grandMere.faireConnaissanceAvec(roro);
+        grandMere.faireConnaissanceAvec(akimoto);
+        grandMere.faireConnaissanceAvec(masako);
 
-        masako.ranconner(kumi);
-        masako.ranconner(chonin);
-        masako.ranconner(marco);
-
-        akimoto.direBonjour();
-        masako.direBonjour();
-
-        masako.ranconner(kumi);
-
-        masako.faireConnaissanceAvec(yaku);
-
-        masako.faireLeGentil();
-
-        masako.faireConnaissanceAvec(roro);
+        grandMere.ragoter();
 
     }
 }
