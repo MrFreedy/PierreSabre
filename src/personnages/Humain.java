@@ -8,9 +8,9 @@ public class Humain {
 	private String boissonFavorite;
 	private int money;
 
-	private String[] memoire = new String[30];
+	public Humain[] memoire = new Humain[30];
 
-	private int nbConnaissance = 0;
+	public int nbConnaissance = 0;
 
 	public Humain(String nom, String boissonFavorite, int money) {
 		this.nom=nom;
@@ -20,6 +20,7 @@ public class Humain {
 		assert money>=0;
 		assert nom!=null;
 		assert boissonFavorite!=null;
+		assert nbConnaissance>=0;
 	}
 
 
@@ -68,14 +69,14 @@ public class Humain {
 
 	public void memoriser(Humain humain){
 		if (nbConnaissance < memoire.length){
-			memoire[nbConnaissance] = humain.getNom();
+			memoire[nbConnaissance] = humain;
 			nbConnaissance++;
 		}
 		else {
 			for (int i = 0; i < memoire.length-1; i++){
 				memoire[i] = memoire[i+1];
 			}
-			memoire[memoire.length-1] = humain.getNom();
+			memoire[memoire.length-1] = humain;
 		}
 	}
 
