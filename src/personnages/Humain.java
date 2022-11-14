@@ -1,10 +1,17 @@
 package personnages;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Humain {
 	private String nom;
 	private String boissonFavorite;
 	private int money;
-	
+
+	private String[] memoire = new String[30];
+
+	private int nbConnaissance = 0;
+
 	public Humain(String nom, String boissonFavorite, int money) {
 		this.nom=nom;
 		this.boissonFavorite=boissonFavorite;
@@ -57,6 +64,43 @@ public class Humain {
 			System.out.printf("J'ai %d sous en poche. Je vais pouvoir m'offrir %s à %d sous.\n",money,bien,prix);
 			perdreArgent(prix);
 		}
+	}
+
+	public void memoriser(Humain humain){
+		if (nbConnaissance < memoire.length){
+			memoire[nbConnaissance] = humain.getNom();
+			nbConnaissance++;
+		}
+		else {
+			for (int i = 0; i < memoire.length-1; i++){
+				memoire[i] = memoire[i+1];
+			}
+			memoire[memoire.length-1] = humain.getNom();
+		}
+	}
+
+	public void listerConnaissance(){
+		parler("Je connais beaucoup de monde dont :");
+		for (int i =0; i<nbConnaissance; i++){
+			if (i == nbConnaissance-1){
+				System.out.printf(" %s.\n",memoire[i]);
+			}
+			else {
+				System.out.printf(" %s,",memoire[i]);
+			}
+		}
+	}
+
+	public void repondre(Humain humain){
+		direBonjour();
+		memoriser(humain);
+	}
+
+	public void faireConnaissanceAvec(Humain humain){
+		direBonjour();
+		humain.repondre(this);
+		memoriser(humain);
+
 	}
 	
 }
