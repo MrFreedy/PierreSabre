@@ -11,6 +11,11 @@ public class Yakuza extends Humain{
 
     }
 
+    @Override
+    public void direBonjour() {
+        System.out.printf("("+getNom()+") - "+"Bonjour ! Je m’appelle %s et j'aime boire du %s ! Mon clan est celui de %s.\n", getNom(), getBoisson(),getClan());
+    }
+
     public String getClan() {
         return clan;
     }

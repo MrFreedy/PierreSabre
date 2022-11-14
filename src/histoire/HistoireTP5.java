@@ -14,7 +14,7 @@ public class HistoireTP5 {
         Yakuza yaku = new Yakuza("Yaku Le Noir","Wisky",50,"Warsong");
         Ronin roro = new Ronin("Roro","Shochu",50);
 
-        marco.faireConnaissanceAvec(roro);
+        /*marco.faireConnaissanceAvec(roro);
 
         marco.faireConnaissanceAvec(yaku);
 
@@ -22,6 +22,8 @@ public class HistoireTP5 {
 
         marco.faireConnaissanceAvec(kumi);
 
-        marco.listerConnaissance();
+        marco.listerConnaissance();*/
+
+        yaku.direBonjour();
     }
 }
